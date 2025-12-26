@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIIE Study Abroad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/viie.png" alt="Graduation Cap" class="nav-logo-img">
+                <span>Vidyalankar Institute of International Education</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+                <li><a href="#" data-page="admission" class="nav-link">Admission Process</a></li>
+                <li><a href="#" data-page="apply" class="nav-link">Apply Now</a></li>
+                <li><a href="#" data-page="login" class="nav-link">Login</a></li>
+                <li id="navDashboard" style="display: none;"><a href="#" data-page="dashboard" class="nav-link">Dashboard</a></li>
+                <li id="navLogout" style="display: none;"><a href="#" id="logoutBtn" class="nav-link btn-logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="mainContent">
+        <!-- HOME PAGE -->
+        <section id="homePage" class="page active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Study Abroad with Confidence</h1>
+                    <p class="hero-subtitle">Connect with top universities worldwide and achieve your academic dreams</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-page="apply">Apply Now</button>
+                        <button class="btn btn-secondary" data-page="admission">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-university"></i></div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Partner Universities</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Students Placed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-award"></i></div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Universities Section -->
+            <div class="universities-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Top Partner Universities</h2>
+                        <p>Explore our network of world-class educational institutions</p>
+                    </div>
+
+                    <!-- Filter Options -->
+                    <div class="filter-section">
+                        <div class="filter-group">
+                            <label for="countryFilter">Country:</label>
+                            <select id="countryFilter" class="filter-select">
+                                <option value="all">All Countries</option>
+                                <option value="USA">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="programFilter">Program:</label>
+                            <select id="programFilter" class="filter-select">
+                                <option value="all">All Programs</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="postgraduate">Postgraduate</option>
+                                <option value="phd">PhD</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="searchUniversity">Search:</label>
+                            <input type="text" id="searchUniversity" class="filter-input" placeholder="Search universities...">
+                        </div>
+                    </div>
+
+                    <!-- Universities Grid -->
+                    <div id="universitiesGrid" class="universities-grid">
+                        <!-- Universities will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMISSION PROCESS PAGE -->
+        <section id="admissionPage" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Admission Process</h1>
+                    <p>Your journey to international education starts here</p>
+                </div>
+
+                <div class="admission-process">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-user-plus"></i> Register & Profile Creation</h3>
+                            <p>Create your account and complete your student profile with personal details, educational background, and career aspirations.</p>
+                            <ul>
+                                <li>Personal information and contact details</li>
+                                <li>Educational qualifications and transcripts</li>
+                                <li>Language proficiency scores (IELTS/TOEFL)</li>
+                                <li>Work experience (if applicable)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-search"></i> University Selection</h3>
+                            <p>Browse our extensive database of partner universities and select programs that match your academic goals and budget.</p>
+                            <ul>
+                                <li>Compare tuition fees and living expenses</li>
+                                <li>Review program requirements and curriculum</li>
+                                <li>Check scholarship opportunities</li>
+                                <li>Shortlist up to 5 universities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-file-alt"></i> Document Preparation</h3>
+                            <p>Prepare and upload all required documents for your application with guidance from our expert counselors.</p>
+                            <ul>
+                                <li>Academic transcripts and certificates</li>
+                                <li>Statement of Purpose (SOP)</li>
+                                <li>Letters of Recommendation (LOR)</li>
+                                <li>Financial documents</li>
+                                <li>Passport copy and photographs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-paper-plane"></i> Submit Application</h3>
+                            <p>Submit your complete application to selected universities through our streamlined online portal.</p>
+                            <ul>
+                                <li>Review and verify all information</li>
+                                <li>Pay application fees (if required)</li>
+                                <li>Track application status in real-time</li>
+                                <li>Receive updates via email and dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-clipboard-check"></i> Entrance Exams & Interviews</h3>
+                            <p>Prepare for and complete any required entrance exams or interviews conducted by universities.</p>
+                            <ul>
+                                <li>GRE/GMAT/SAT preparation resources</li>
+                                <li>Mock interview sessions</li>
+                                <li>Language proficiency tests</li>
+                                <li>University-specific assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-envelope-open-text"></i> Offer Letter & Acceptance</h3>
+                            <p>Receive offer letters from universities and accept your preferred admission.</p>
+                            <ul>
+                                <li>Review offer letter details</li>
+                                <li>Accept or decline offers</li>
+                                <li>Pay confirmation deposit</li>
+                                <li>Receive Confirmation of Enrollment (CoE)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-passport"></i> Visa Application</h3>
+                            <p>Get assistance with visa application process and documentation.</p>
+                            <ul>
+                                <li>Visa documentation guidance</li>
+                                <li>Financial proof preparation</li>
+                                <li>Visa interview preparation</li>
+                                <li>Travel insurance and health checkups</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-plane-departure"></i> Pre-Departure & Arrival</h3>
+                            <p>Complete pre-departure formalities and prepare for your journey.</p>
+                            <ul>
+                                <li>Pre-departure orientation sessions</li>
+                                <li>Accommodation arrangements</li>
+                                <li>Airport pickup coordination</li>
+                                <li>University enrollment completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Start Your Journey?</h3>
+                    <p>Apply now and take the first step towards your international education</p>
+                    <button class="btn btn-primary btn-large" data-page="apply">Start Your Application</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPLICATION FORM PAGE -->
+        <section id="applyPage" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Application Form</h1>
+                    <p>Complete the form below to begin your application process</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="applicationForm" class="application-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth <span class="required">*</span></label>
+                                    <input type="date" id="dob" name="dob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality">Nationality <span class="required">*</span></label>
+                                    <input type="text" id="nationality" name="nationality" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address <span class="required">*</span></label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Educational Background -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-graduation-cap"></i> Educational Background</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="lastDegree">Last Degree Obtained <span class="required">*</span></label>
+                                    <select id="lastDegree" name="lastDegree" required>
+                                        <option value="">Select Degree</option>
+                                        <option value="high_school">High School</option>
+                                        <option value="diploma">Diploma</option>
+                                        <option value="bachelor">Bachelor's Degree</option>
+                                        <option value="master">Master's Degree</option>
+                                        <option value="phd">PhD</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gpa">GPA/Percentage <span class="required">*</span></label>
+                                    <input type="text" id="gpa" name="gpa" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="institution">Institution Name <span class="required">*</span></label>
+                                    <input type="text" id="institution" name="institution" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="yearOfGraduation">Year of Graduation <span class="required">*</span></label>
+                                    <input type="number" id="yearOfGraduation" name="yearOfGraduation" min="1980" max="2025" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Test Scores -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-chart-line"></i> Test Scores</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="englishTest">English Proficiency Test</label>
+                                    <select id="englishTest" name="englishTest">
+                                        <option value="">Select Test</option>
+                                        <option value="ielts">IELTS</option>
+                                        <option value="toefl">TOEFL</option>
+                                        <option value="pte">PTE</option>
+                                        <option value="duolingo">Duolingo</option>
+                                        <option value="none">Not Taken Yet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="englishScore">Score</label>
+                                    <input type="text" id="englishScore" name="englishScore">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="standardTest">Standardized Test</label>
+                                    <select id="standardTest" name="standardTest">
+                                        <option value="">Select Test</option>
+                                        <option value="gre">GRE</option>
+                                        <option value="gmat">GMAT</option>
+                                        <option value="sat">SAT</option>
+                                        <option value="act">ACT</option>
+                                        <option value="none">Not Taken Yet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="standardScore">Score</label>
+                                    <input type="text" id="standardScore" name="standardScore">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Program Selection -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-book"></i> Program Selection</h3>
+                            <div class="form-group">
+                                <label for="programLevel">Program Level <span class="required">*</span></label>
+                                <select id="programLevel" name="programLevel" required>
+                                    <option value="">Select Program Level</option>
+                                    <option value="undergraduate">Undergraduate</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fieldOfStudy">Field of Study <span class="required">*</span></label>
+                                <select id="fieldOfStudy" name="fieldOfStudy" required>
+                                    <option value="">Select Field</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="business">Business & Management</option>
+                                    <option value="computer_science">Computer Science</option>
+                                    <option value="medicine">Medicine & Health Sciences</option>
+                                    <option value="arts">Arts & Humanities</option>
+                                    <option value="sciences">Natural Sciences</option>
+                                    <option value="social_sciences">Social Sciences</option>
+                                    <option value="law">Law</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredCountry">Preferred Country <span class="required">*</span></label>
+                                <select id="preferredCountry" name="preferredCountry" required>
+                                    <option value="">Select Country</option>
+                                    <option value="USA">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="intakeYear">Intended Intake <span class="required">*</span></label>
+                                <select id="intakeYear" name="intakeYear" required>
+                                    <option value="">Select Intake</option>
+                                    <option value="fall_2024">Fall 2024</option>
+                                    <option value="spring_2025">Spring 2025</option>
+                                    <option value="fall_2025">Fall 2025</option>
+                                    <option value="spring_2026">Spring 2026</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-info-circle"></i> Additional Information</h3>
+                            <div class="form-group">
+                                <label for="comments">Additional Comments or Questions</label>
+                                <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your goals, preferences, or any questions you have..."></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                    I agree to the <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Privacy Policy</a> <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="subscribeNewsletter" name="subscribeNewsletter">
+                                    Subscribe to newsletter for updates and offers
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i> Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN/REGISTER PAGE -->
+        <section id="loginPage" class="page">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Login</button>
+                        <button class="auth-tab" data-tab="register">Register</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div id="loginForm" class="auth-form active">
+                        <h2>Welcome Back</h2>
+                        <p class="auth-subtitle">Login to access your account</p>
+
+                        <div class="role-selector">
+                            <label class="role-option">
+                                <input type="radio" name="loginRole" value="student" checked>
+                                <span><i class="fas fa-user-graduate"></i> Student</span>
+                            </label>
+                            <label class="role-option">
+                                <input type="radio" name="loginRole" value="admin">
+                                <span><i class="fas fa-user-shield"></i> Admin</span>
+                            </label>
+                            <label class="role-option">
+                                <input type="radio" name="loginRole" value="university">
+                                <span><i class="fas fa-university"></i> University</span>
+                            </label>
+                        </div>
+
+                        <form id="loginFormSubmit">
+                            <div class="form-group">
+                                <label for="loginEmail">Email Address</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="rememberMe">
+                                    Remember me
+                                </label>
+                                <a href="#" class="link">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Login</button>
+                        </form>
+
+                        <div class="auth-divider">
+                            <span>or continue with</span>
+                        </div>
+                        <div class="social-auth">
+                            <button class="btn-social"><i class="fab fa-google"></i> Google</button>
+                            <button class="btn-social"><i class="fab fa-facebook"></i> Facebook</button>
+                        </div>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div id="registerForm" class="auth-form">
+                        <h2>Create Account</h2>
+                        <p class="auth-subtitle">Join us to start your journey</p>
+
+                        <div class="role-selector">
+                            <label class="role-option">
+                                <input type="radio" name="registerRole" value="student" checked>
+                                <span><i class="fas fa-user-graduate"></i> Student</span>
+                            </label>
+                            <label class="role-option">
+                                <input type="radio" name="registerRole" value="university">
+                                <span><i class="fas fa-university"></i> University</span>
+                            </label>
+                        </div>
+
+                        <form id="registerFormSubmit">
+                            <div class="form-group">
+                                <label for="registerName">Full Name</label>
+                                <input type="text" id="registerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Email Address</label>
+                                <input type="email" id="registerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password</label>
+                                <input type="password" id="registerPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerConfirmPassword">Confirm Password</label>
+                                <input type="password" id="registerConfirmPassword" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="agreeTermsRegister" required>
+                                    I agree to the Terms and Conditions
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDENT DASHBOARD PAGE -->
+        <section id="dashboardPage" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="dashboardUserName">Student Name</h3>
+                        <p id="dashboardUserEmail">email@example.com</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <a href="#" class="dashboard-nav-item active" data-section="overview">
+                            <i class="fas fa-chart-line"></i> Overview
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="applications">
+                            <i class="fas fa-file-alt"></i> Applications
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="fees">
+                            <i class="fas fa-dollar-sign"></i> Fees Status
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="exams">
+                            <i class="fas fa-pencil-alt"></i> Entrance Exams
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="offers">
+                            <i class="fas fa-envelope"></i> Offer Letters
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="academic">
+                            <i class="fas fa-book"></i> Academic Reports
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="profile">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="dashboard-content">
+                    <!-- Overview Section -->
+                    <div id="overviewSection" class="dashboard-section active">
+                        <h2>Dashboard Overview</h2>
+                        <div class="dashboard-stats">
+                            <div class="stat-box">
+                                <div class="stat-icon blue"><i class="fas fa-file-alt"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="totalApplications">0</div>
+                                    <div class="stat-label">Total Applications</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="acceptedApplications">0</div>
+                                    <div class="stat-label">Offers Received</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="pendingApplications">0</div>
+                                    <div class="stat-label">Pending</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon purple"><i class="fas fa-dollar-sign"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="feesPaid">0%</div>
+                                    <div class="stat-label">Fees Paid</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h3>Recent Activity</h3>
+                            <div id="recentActivityList" class="activity-list">
+                                <!-- Activity items will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications Section -->
+                    <div id="applicationsSection" class="dashboard-section">
+                        <h2>My Applications</h2>
+                        <div id="applicationsList" class="applications-list">
+                            <!-- Applications will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Fees Status Section -->
+                    <div id="feesSection" class="dashboard-section">
+                        <h2>Fees Status</h2>
+                        <div id="feesStatusList" class="fees-list">
+                            <!-- Fees status will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Entrance Exams Section -->
+                    <div id="examsSection" class="dashboard-section">
+                        <h2>Entrance Exams Status</h2>
+                        <div id="examsStatusList" class="exams-list">
+                            <!-- Exam status will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Offer Letters Section -->
+                    <div id="offersSection" class="dashboard-section">
+                        <h2>Offer Letters</h2>
+                        <div id="offerLettersList" class="offers-list">
+                            <!-- Offer letters will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Academic Reports Section -->
+                    <div id="academicSection" class="dashboard-section">
+                        <h2>Academic Reports</h2>
+                        <div id="academicReportsList" class="academic-list">
+                            <!-- Academic reports will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div id="profileSection" class="dashboard-section">
+                        <h2>My Profile</h2>
+                        <div class="profile-content">
+                            <div id="profileDetails" class="profile-details">
+                                <!-- Profile details will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN DASHBOARD PAGE -->
+        <section id="adminDashboardPage" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Admin Panel</h3>
+                        <p id="adminEmail">admin@globaledu.com</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <a href="#" class="dashboard-nav-item active" data-section="admin-overview">
+                            <i class="fas fa-chart-line"></i> Overview
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="admin-applications">
+                            <i class="fas fa-file-alt"></i> All Applications
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="admin-students">
+                            <i class="fas fa-users"></i> Students
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="admin-universities">
+                            <i class="fas fa-university"></i> Universities
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="admin-chat">
+                            <i class="fas fa-comments"></i> Chat Messages
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="dashboard-content">
+                    <div id="adminOverviewSection" class="dashboard-section active">
+                        <h2>Admin Dashboard</h2>
+                        <div class="dashboard-stats">
+                            <div class="stat-box">
+                                <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">1,247</div>
+                                    <div class="stat-label">Total Students</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon green"><i class="fas fa-file-alt"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">3,456</div>
+                                    <div class="stat-label">Applications</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon orange"><i class="fas fa-university"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">523</div>
+                                    <div class="stat-label">Universities</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon purple"><i class="fas fa-envelope"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">89</div>
+                                    <div class="stat-label">Pending Queries</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-content">
+                            <p>Welcome to the admin dashboard. Select a section from the sidebar to manage applications, students, universities, and chat messages.</p>
+                        </div>
+                    </div>
+                    <div id="adminApplicationsSection" class="dashboard-section">
+                        <h2>All Applications</h2>
+                        <div class="admin-content">
+                            <p>Manage all student applications here.</p>
+                        </div>
+                    </div>
+                    <div id="adminStudentsSection" class="dashboard-section">
+                        <h2>Students Management</h2>
+                        <div class="admin-content">
+                            <p>View and manage all registered students.</p>
+                        </div>
+                    </div>
+                    <div id="adminUniversitiesSection" class="dashboard-section">
+                        <h2>Universities Management</h2>
+                        <div class="admin-content">
+                            <p>Manage partner universities and their programs.</p>
+                        </div>
+                    </div>
+                    <div id="adminChatSection" class="dashboard-section">
+                        <h2>Chat Messages</h2>
+                        <div class="admin-content">
+                            <p>View and respond to student queries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIVERSITY DASHBOARD PAGE -->
+        <section id="universityDashboardPage" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>University Portal</h3>
+                        <p id="universityEmail">contact@university.edu</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <a href="#" class="dashboard-nav-item active" data-section="uni-overview">
+                            <i class="fas fa-chart-line"></i> Overview
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="uni-applications">
+                            <i class="fas fa-file-alt"></i> Applications
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="uni-programs">
+                            <i class="fas fa-book"></i> Programs
+                        </a>
+                        <a href="#" class="dashboard-nav-item" data-section="uni-profile">
+                            <i class="fas fa-building"></i> Profile
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="dashboard-content">
+                    <div id="uniOverviewSection" class="dashboard-section active">
+                        <h2>University Dashboard</h2>
+                        <div class="dashboard-stats">
+                            <div class="stat-box">
+                                <div class="stat-icon blue"><i class="fas fa-file-alt"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">156</div>
+                                    <div class="stat-label">New Applications</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">89</div>
+                                    <div class="stat-label">Accepted</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon orange"><i class="fas fa-users"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">234</div>
+                                    <div class="stat-label">Enrolled Students</div>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon purple"><i class="fas fa-book"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-value">12</div>
+                                    <div class="stat-label">Active Programs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-content">
+                            <p>Welcome to your university portal. Manage applications and programs from here.</p>
+                        </div>
+                    </div>
+                    <div id="uniApplicationsSection" class="dashboard-section">
+                        <h2>Applications</h2>
+                        <div class="admin-content">
+                            <p>Review and process student applications.</p>
+                        </div>
+                    </div>
+                    <div id="uniProgramsSection" class="dashboard-section">
+                        <h2>Programs</h2>
+                        <div class="admin-content">
+                            <p>Manage your university programs and courses.</p>
+                        </div>
+                    </div>
+                    <div id="uniProfileSection" class="dashboard-section">
+                        <h2>University Profile</h2>
+                        <div class="admin-content">
+                            <p>Update your university information and details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Live Chat Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <i class="fas fa-comments"></i>
+                <span>Live Support</span>
+            </div>
+            <button id="chatClose" class="chat-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+            <div class="chat-message bot">
+                <div class="message-content">
+                    <p>Hello! How can I help you today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Type your message...">
+            <button id="chatSend" class="chat-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button id="chatToggle" class="chat-toggle">
+        <i class="fas fa-comments"></i>
+        <span class="chat-badge" id="chatBadge">0</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-graduation-cap"></i> Vidyalankar Institute of International Education</h4>
+                    <p>Connecting students with world-class universities for over a decade.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="admission">Admission Process</a></li>
+                        <li><a href="#" data-page="apply">Apply Now</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">University Selection</a></li>
+                        <li><a href="#">Application Assistance</a></li>
+                        <li><a href="#">Visa Guidance</a></li>
+                        <li><a href="#">Pre-Departure Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> + 91 9167787723</li>
+                        <li><i class="fas fa-envelope"></i> enquiry@viie.edu.in</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Vidyalankar, Wadala</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 VIIE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
